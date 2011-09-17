@@ -1,0 +1,91 @@
+PHP AQUA:
+
+For more info and demo project please visit http://www.phpaqua.com
+
+
++------------------------+
+| FLEXIBLE				 |
++------------------------+
+
+MULTIPLE DEPLOYMENT
+--------------------
+Run many domains using your VPS, Shared or Dedi in unified aqua structure
+Share resources accross site
+Deploy your app on multiple hosts like localhost, staging, production etc which is dynamically resolved.
+
+
+DUAL-WAY LOCALIZATION
+--------------------
+Organized your views or assets in folders named according to supported locales! Aqua will search first current locale, followed by default locale and without localized resource.
+Additionally, translation arrays can be used with function like _t();
+
+
+MODULAR
+--------------------
+Organize your projects in Zones and Applets.
+A Zone has its own controller, views, models, applet etc! Not only these, a Zone can have child zones as well!
+Applets are independent component with one controller but as one or many views along with its own asset directory!
+
+
+INTUITIVE
+--------------------
+Aqua executes controllers in a cascading intuitive manner!
+It loads layout, views, applets or even asssets assets considering current locale and zone.
+Organize your resources and classes in easy to maintainable way!
+
+
++------------------------+
+| EXTENDABLE			 |
++------------------------+
+						 			
+SITE DELEGATE
+--------------------
+Aqua exposes various site events like willExecuteURL, didExecuteURL, willCallControllerMethod, didCallControllerMethod etc
+A site may have many delegates as required and site behaviors can be regulated using delegates without writing controller code!
+
+
+OUTPUT FORMATTER
+--------------------
+add output formatters to your site if you like to make some templating engine!
+A site can have as many output formatters as required.
+
+
+EXCEPTION HANDLER
+--------------------
+Handle any error or exception using exception handler!
+Exception handlers also can be output formatter!
+
+
+THIRD-PARTY LIBRARIES
+--------------------
+Third party libraries are as easy to integrate as pasting in a class folder!
+Even same for bigger libraries like Doctrine, just paste the Doctrine directory in any of the class folder!
+You can organize your classes in namespaces as you like and again all these can be shared among sites or zones or can be made only availble to certain zone.
+
+
++------------------------+
+| RESTful				 |
++------------------------+
+
+Well, its not fully confront to the REST spec of Dr. Roy T. Fielding's(http://roy.gbiv.com/)
+but still practical RESTful api can be developed using simple and intuitive callbacks.
+
+Here is a URL:
+GET http://mysite.com/api/v2/item/2.json
+
+Define "api" as a REST zone with available versions say, v1 and v2.
+Then it will call -- item::get_item_json(2);
+
+where item is the controller found in api/controllers/v2/item.php
+
+similarly some other callbacks can be:
+GET http://mysite.com/api/v2/item.json => $itemObj->get_item_all_json();
+GET http://mysite.com/api/v2/item/2/order/4.json => $itemObj->get_item_order_json( 2, 4);
+POST http://mysite.com/api/v2/item/2 => $itemObj->post_item( 2 );
+
+
+
+
+For more info and demo project please visit http://www.phpaqua.com
+
+								 			
