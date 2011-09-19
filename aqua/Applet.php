@@ -162,23 +162,24 @@ namespace aqua;
 		
 		public static function asset( $applet, $file, $ext, $url = true){
 				
-			$path = App::$instance->getLocalizedPath( 'applets/'.$applet.'/asset', $file ,$ext );
+			$path = App::$instance->getLocalizedPath( 'applets/'.$applet.'/assets', $file ,$ext );
+			
 			if( !$path ){
 				// check in global folder		
-				$prefix = GLOBAL_DIR.'/applets/'.$applet.'/asset';				
+				$prefix = GLOBAL_DIR.'/applets/'.$applet.'/assets';				
 		    	if( file_exists( $prefix.'/'.App::$instance->currentLocale.'/'.$file.$ext ) ){	    	
 		    		$path =  $prefix.'/'.App::$instance->currentLocale.'/'.$file.$ext;
 		    	}
 				if( file_exists( $prefix.'/'.App::$instance->defaultLocale.'/'.$file.$ext ) ){	    	
 		    		$path = $prefix.'/'.App::$instance->defaultLocale.'/'.$file.$ext;
 		    	}		    	
-				if( file_exists( $prefix.'/'.$file.$ext ) ){	    	
+				
+		    	if( file_exists( $prefix.'/'.$file.$ext ) ){	    	
 		    		$path =  $prefix.'/'.$file.$ext;
 				}
-				if( $path ){
-					if( $url ){
-						throw new AquaException( AquaException::APPLET_GLOBAL_ASSET_LINK_ASKED, array( $applet, $file ) );
-					}					
+				
+				if( !$path ){				
+					throw new AquaException( AquaException::APPLET_GLOBAL_ASSET_LINK_ASKED, array( $applet, $file ) );			
 				}				
 			}
 			if( $path){
@@ -224,10 +225,14 @@ namespace aqua;
 			}			
 		}
 		
-		public static function img( $applet, $file ){
-			return self::asset( $applet, $file, '', true );
+		public static function imgURL( $applet, $file ){
+			return self::asset( $applet, 'images/'.$file, '', true );
 		}
 		
+		public static function img( $applet, $file, $title='', $cssClass='', $id = ''){			
+			echo '<img src="'.self::asset( $applet, 'images/'.$file, '', true ).'" class="'.$cssClass.'" title="'.$title.'" id="'.$id.'" />';
+		}
+	
 		function once($key){
 			if(func_num_args() > 1){// want to set
 				$this->session($this->_id.$key, func_get_arg(1));

@@ -85,9 +85,9 @@ class AquaException extends \Exception{
 					,self::APPLET_VIEW_NOT_FOUND=>'Applet View file not found :  <b><i>%s/views/%s</i></b>'
 					,self::APPLET_VIEW_DIR_NOT_FOUND=>'Applet View dir not found :  <b><i>%s/views/</i></b>'
 					,self::APPLET_INVALID_ACTION_URL=>'Applet action url must be like :  <b><i>appletclass/id/[optional method url]</i></b>'
-					,self::APPLET_ASSET_NOT_FOUND=>'Applet asset not found :  <b><i>%s/asset/%s</i></b>'
-					,self::APPLET_GLOBAL_ASSET_LINK_ASKED=>'Global Applets\' assets cannot be used as link :  <b><i>%s/asset/%s</i></b><br/>'
-					,self::APPLET_LAYOUT_NOT_FOUND=>'Applet layout not found :  <b><i>%s/asset/%s</i></b><br/>'
+					,self::APPLET_ASSET_NOT_FOUND=>'Applet asset not found :  <b><i>%s/assets/%s</i></b>'
+					,self::APPLET_GLOBAL_ASSET_LINK_ASKED=>'Global Applets\' assets cannot be used as link :  <b><i>%s/assets/%s</i></b><br/>'
+					,self::APPLET_LAYOUT_NOT_FOUND=>'Applet layout not found :  <b><i>%s/assets/%s</i></b><br/>'
 					
 					,self::ASSET_NOT_FOUND=>'Asset not fond :  <b><i>%s</i></b>'
 					,self::PROGRAM_ERROR=>'Program error  <b><i>%s</i></b>'
