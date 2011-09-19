@@ -12,7 +12,7 @@ $selected_home = $page=='home'?'selected':'';
 			<?php echo $this->anchor("index","Home") ?>
 		</div>
 		<div class='menu_item <?php echo $selected_home ?>'>
-			<?php echo $this->anchor("home","About") ?>
+			<?php echo '<a href="',$this->action("home"),'">About</a>' ?>
 		</div>
 	</div>
 	

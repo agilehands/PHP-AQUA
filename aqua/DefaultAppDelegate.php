@@ -82,7 +82,7 @@ class DefaultAppDelegate extends AbstractAppDelegate{
 	}
 	public function didCallAppletAction( &$applet, $id, &$method, &$params ){
 		$this->log( 'didCallAppletAction', array( $applet, $id, $method) );		
-		App::redirectLast();
+		//App::redirectLast();
 	}
 	
 	/**

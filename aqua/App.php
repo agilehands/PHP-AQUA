@@ -501,6 +501,15 @@ class App{
 		if( $this->willCallAppletAction( $applet, $id, $method, $urlParts )){
 			call_user_func_array( array( $obj, $method ), $urlParts);
 			$this->didCallAppletAction( $applet, $id, $method, $urlParts );
+			$lastURL = $_SESSION[ SESSION_PREFIX.'LAST_URL'];
+			parse_str( parse_url( $lastURL, PHP_URL_QUERY ), $query );
+			$appletState = $query[ $id ];
+			
+			if(  !empty( $appletState) ){
+				$lastURL = str_replace( "$id=$appletState",'',$lastURL );				
+				$_SESSION[ SESSION_PREFIX.'LAST_URL'] = $lastURL;
+			}
+			self::redirectLast();
 		}
 	}
 	
