@@ -5,6 +5,9 @@ Release 0.3.1
 Now, in a any lang file you can use method to add/update translation to the current locale.
 
 Example: 
+
+<?php
+
 // File: lang/en.php
 
 use aqua\App;
@@ -12,4 +15,6 @@ use aqua\App;
 $lang = array();
 $lang[ 'title' ] = 'Welcome to my app!';
 
-App::updateTranslation( $lang ); 
+App::updateTranslation( $lang );
+
+?> 
