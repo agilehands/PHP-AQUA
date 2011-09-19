@@ -119,6 +119,7 @@ class Controller{
 			$this->layoutPath =  App::$instance->getLayoutPath( $layout, $isWebrootLayout );
 		}
 		
+		//echo $this->layoutPath;
 	}
 	 
 	/**

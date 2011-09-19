@@ -59,7 +59,8 @@ class App{
 	private $urlExtension = null;
 	private $isRestZone = false;
 	private $RESTCurrentVersion = 'v1';	
-	private $RESTAvailableVersions = null;	
+	private $RESTAvailableVersions = null;
+	
 	
 	/**
 	 * This method is to be called within ini.php file in the rest zone
@@ -532,7 +533,7 @@ class App{
 	 * @param $applet name of the applet
 	 * @throws AquaException if not found
 	 */
-	public function getAppletDir( $applet ){
+	public function getAppletDir( $applet, $noClass = false ){
 		$len = count( $this->zonePaths );
 	
 		for( $i = $len ; $i--; $i>-1){
@@ -540,11 +541,21 @@ class App{
 	    	if( file_exists( $prefix.'/applets/'.$applet.'/'.$applet .'.php' ) ){	    		
 	    		return  $prefix.'/applets/'.$applet;
 	    	}
+	    	if( $noClass ){
+		    	if( is_dir( $prefix.'/applets/'.$applet ) ){	    		
+		    		return  $prefix.'/applets/'.$applet;
+		    	}
+	    	}
 	    }
 	    
-		if( file_exists( GLOBAL_DIR.'/applets/'.$applet.'/'.$applet.'.php' )){			
+		if( file_exists( GLOBAL_DIR.'/applets/'.$applet.'/'.$applet.'.php' )){
 			return GLOBAL_DIR.'/applets/'.$applet;
-		}		
+		}
+		if( $noClass ){
+	    	if( is_dir( GLOBAL_DIR.'/applets/'.$applet ) ){	    		
+	    		return GLOBAL_DIR.'/applets/'.$applet;
+	    	}
+    	}
 	}
 	
 	
@@ -586,7 +597,8 @@ class App{
 	    return false;
 	}
 	
-	public function getAppletView( $applet, $view ){
+	public function getAppletView( $applet, $view, $noClass = false ){
+				
 		$path = $this->getLocalizedPath( 'applets/'.$applet.'/views', $view , '.php' );
 		
 		if( $path )return $path;
@@ -622,6 +634,7 @@ class App{
 		if( file_exists( $prefix.'/'.$this->defaultLocale.'/'.$layout .'.php' ) ){	    	
     		return $prefix.'/'.$this->defaultLocale.'/'.$layout .'.php' ;
     	}
+    	
 		if( file_exists( $prefix.'/'.$layout .'.php' ) ){	    	
     		return $prefix.'/'.$layout .'.php';
 		}
@@ -944,7 +957,16 @@ class App{
 	public static function currentZone(){
 		return self::$instance->currentZone;
 	}
-		
+	public static function get( $key ){
+		return self::$instance->values[ $key ];
+	}
+	public static function set( $key, $value ){
+		self::$instance->values[ $key ] = $value;
+	}
+	
+	public static function getPath( $path = '' ){
+		return self::$instance->directory . '/' . $path;
+	}
 	////////// viewports  //////////
 	private static $viewPorts = array();
 	private static $viewPortDelegates = array();

@@ -24,15 +24,15 @@ use aqua\App;
 			<div class='logo'>
 				<?php App::img( 'aqua-logo.png' )?>
 			</div>
+			
 			<div class='title'>
 				<?php echo _t('title');?>
 				<?php Applet::view('locales', 'index')?>
 			</div>
 		</div>
 		<div style="clear: both">
-			layout = <?php echo App::getCurrentLocale() ?>/default.php<br/>
-			The site title above is using translation, but this sentence is from localized layout
-			
+			layout = <?php echo App::getCurrentLocale() ?>/default.php
+			উপরে সাইট টাইটেলে ট্রান্সলেশন ব্যাবহার করাহলেও এই বাক্যটি সরাসরি localized লে-আউটে লেখা হয়েছে।  
 		</div>
 		<div class='container'>
 			<div class='view'>		

@@ -10,13 +10,13 @@
 use aqua\IViewPortComponent;
 class VPCompOne implements  IViewPortComponent{
 	public function onViewPortHeader( $viewPort, $state ){
-		echo 'header:',$viewPort, ',', $state,'<br/>';
+		//echo 'header:',$viewPort, ',', $state,'<br/>';
 	}
 	public function onViewPortRender( $viewPort, $state ){
-		echo 'render:',$viewPort, ',', $state,'<br/>';
+		echo "<br/>This is a viewport";
 	}
 	public function onViewPortfooter( $viewPort, $state ){
-		echo 'footer:',$viewPort, ',', $state,'<br/>';
+		//echo 'footer:',$viewPort, ',', $state,'<br/>';
 	}
 }
 ?>

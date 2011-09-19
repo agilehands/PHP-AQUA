@@ -129,16 +129,17 @@ function AquaErrorHandler($errno, $errstr, $errfile, $errline)
 /**
  * Get the translation,
  */
-$lang = array();
+$__aqua_translations__ = array();
 function _t($key,$args = array()){
-	global $lang;
-	if(!isset($lang[$key])){
+	global $__aqua_translations__;
+	
+	if(!isset($__aqua_translations__[$key])){
 		return $key;
 	}else{
 		if( !empty($args) ){
-			return vsprintf($lang[$key] , $args);
+			return vsprintf($__aqua_translations__[$key] , $args);
 		}
-		return $lang[$key];
+		return $__aqua_translations__[$key];
 	}
 }
 
