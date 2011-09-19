@@ -1,20 +1,8 @@
-Release 0.3.1
+Release 0.3.2
 ------------
-1. added App::updateTranslation method
+1. Added apple locales. easy way to show country flags of supported locale.
 
-Now, in a any lang file you can use method to add/update translation to the current locale.
+However, this applet cannnot be used from Global directory since it uses assets like css and images.
+Copy this applet into your application zone. 
 
-Example: 
-
-<?php
-
-// File: lang/en.php
-
-use aqua\App;
-
-$lang = array();
-$lang[ 'title' ] = 'Welcome to my app!';
-
-App::updateTranslation( $lang );
-
-?> 
+2. Changed App::getCurrentLocale() to App::currentLocale();

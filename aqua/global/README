@@ -1,1 +1,4 @@
 Everything in global dir is available to all sites!
+
+NOTE: no ASSET can be loaded from global directory, so if any applet or zone comes with
+css or images, copy the applet or zone into your application zone.
