@@ -51,7 +51,7 @@ $app = 	new \aqua\App(
 		      /* site directory */	str_replace('\\', '/', realpath(dirname(__FILE__))) /* required */
 		      /* deployments */		, $deployments    /* required */		
 		      /* default locale */ 	, 'en'	          /* optional */
-		      /* all locale */		, array('en','bn')/* optional */	
+		      /* all locale */		, array('en','bd')/* optional */	
 		      );
 
 // now run the App

@@ -7,10 +7,21 @@
   */
 
 use aqua\App;
-$locales = App::getLocales();
+use aqua\Applet;
 
+Applet::css('locales', 'style.css');
+
+$locales = App::getLocales();
+$currentLocale = App::currentLocale();
 foreach ( $locales as $lang){
-	echo '<a style="text-decoration:none;font-size:14px" href="'.App::url('',$lang).'"> |'. _t($lang)  .' </a>';
+	if( $currentLocale == $lang ){
+		?>
+	<a style="text-decoration:none;font-size:14px" href="<?php echo App::url('',$lang)?>"> <?php  Applet::img('locales', $lang.'.png' ,$lang,'selected_locale')?>  </a>
+	<?php
+	}else{
+		?>
+	<a style="text-decoration:none;font-size:14px" href="<?php echo App::url('',$lang)?>"> <?php  Applet::img('locales', $lang.'.png',$lang, 'other_locale' )?>  </a>
+	<?php
+	}
 }
 ?>
- <span style='font-size: small; color:#dddddd'>| (use App::url() to change any location to any language) </span>

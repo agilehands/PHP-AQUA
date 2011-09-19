@@ -30,7 +30,7 @@ use aqua\App;
 			</div>
 		</div>
 		<div style="clear: both">
-			layout = <?php echo App::getCurrentLocale() ?>/default.php<br/>
+			layout = <?php echo App::currentLocale() ?>/default.php<br/>
 			The site title above is using translation, but this sentence is from localized layout
 			
 		</div>
