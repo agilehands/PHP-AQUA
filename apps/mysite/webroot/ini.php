@@ -1,7 +1,7 @@
 <?php 
 
 use aqua\App;
-
-//App::$instance->addOutputFormatter( new TutorialFormatter());
-
+$comp = new VPCompOne();
+App::addToViewPort( 'sidebar',$comp);
+App::addToViewPort( 'sidebar', new ViewPortAppletRenderer( 'calculator', 'calc') );
 ?>

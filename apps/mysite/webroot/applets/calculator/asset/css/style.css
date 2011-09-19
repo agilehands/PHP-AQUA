@@ -1,0 +1,26 @@
+@CHARSET "UTF-8";
+/*
+testapp.css in webroot
+*/
+
+.calc .app_body{
+	background:#eeeeee;
+	width:260px;
+	height:260px;
+	padding:10px;
+}
+.calc .menu{
+	overflow: hidden;
+	height:30px;
+}
+
+.calc .menu_item{
+	float: left;
+    height: 30px;
+    padding-top: 5px;
+    width: 30px;
+}
+
+.calc .menu .selected{
+	color:red;
+}

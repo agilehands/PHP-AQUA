@@ -8,11 +8,14 @@ class testapplet extends Applet{
 			
 		}
 		public function index( $name = '', $answered= ''){
-			
 			$this->addLayoutParam( 'page', 'index');			
 			$this->show('index',array('name'=>$name,'answered'=>$answered));			
 		}
+		
 		public function home(){
+			$this->execute( '_home');
+		}
+		public function _home(){			
 			$this->addLayoutParam( 'page', 'home');			
 			$this->show('home');						
 		} 

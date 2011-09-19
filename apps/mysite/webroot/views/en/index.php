@@ -5,27 +5,22 @@ use aqua\MysqlAgent;
 use aqua\Applet;
 
 
-App::viewportHeader();
-
 ?>
-<hr/>
-<h1>Please help us making a better demo.</h1>
-<hr/>
-<hr/>
 
+this is a view. 
+<br/>
+<br/>
+Header colors are changed by localized css.
+
+<br>
+<br/>
+Go to <?php App::anchor('other', 'Another view') ?>.
 <?php
-App::addToViewPort( 'vpone', new ViewPortAppletRenderer( 'testapplet', 'ta') );
-App::viewPortRender('vpone');
+//$model = new MysqlAgent();
+//$model->connect();
+//$srr = new SimpleRelationalRecord();
+//$srr->init( 'users',array('idusers'=>'1'));
 
-App::viewPortRender('vptwo', App::VIEWPORT_STATE_VISIBLE);
+//$srr->addRelation('comments','idusers','idusers');
 
-$model = new MysqlAgent();
-$model->connect();
-$srr = new SimpleRelationalRecord();
-$srr->init( 'users',array('idusers'=>'1'));
-
-$srr->addRelation('comments','idusers','idusers');
-
-
-App::viewPortFooter();
 ?>

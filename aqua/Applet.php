@@ -56,7 +56,7 @@ namespace aqua;
 			$this->_isApplet = true;
 			$this->_className = get_class($this);			
 			$this->_id = $id;
-			$this->_dir =  $dir;			
+			$this->_dir =  $dir;
 		}		
 		
 		
@@ -98,8 +98,15 @@ namespace aqua;
 		 * folder and use it!
 		 */
 		public static function view( $applet, $view, $params = array() ){
-			$path = App::$instance->getAppletView( $applet, $view );
+			$path = App::$instance->getAppletView( $applet, $view, true );
 			extract($params);
+			
+			// include the lang file
+			$appletDir = App::$instance->getAppletDir( $applet, true ); 		
+			
+			@include( $appletDir . '/lang/'.App::getDefaultLocale() . '.php');
+			@include( $appletDir . '/lang/'.App::getCurrentLocale() . '.php');		
+		
 			include( $path );
 		}
 		
