@@ -9,9 +9,10 @@
 ?>
 
 <?php
+use aqua\App;
 
-global $__aqua_translations__;
-$__aqua_translations__['en'] = 'en';
-$__aqua_translations__['bn'] = 'bn';
-
+$lang = array();
+$lang['en'] = 'en';
+$lang['bn'] = 'bn';
+App::updateTransalation( $lang );
 ?>

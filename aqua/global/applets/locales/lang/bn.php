@@ -6,13 +6,14 @@
   *               http://amanpages.com
   */
 
+use aqua\App;
 ?>
 
 <?php
 
-global $__aqua_translations__;
-$__aqua_translations__['en'] = 'ইংরেজী ';
-$__aqua_translations__['bn'] = 'বাংলা';
+$lang = array();
+$lang['en'] = 'ইংরেজী ';
+$lang['bn'] = 'বাংলা';
 
-
+App::updateTransalation( $lang );
 ?>

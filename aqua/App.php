@@ -976,6 +976,27 @@ class App{
 	public static function getPath( $path = '' ){
 		return self::$instance->directory . '/' . $path;
 	}
+	
+	/**
+	 * Use this funciton to add translation to the current locale.
+	 * It will overrite any existing values with those of the passed array.
+	 * @example 
+	 * <code>
+	 * // define the translations
+	 * 	$lang = array();
+	 *  $lang[ 'title' ] = 'Welcome to my app';
+	 *  $lang[ 'greeting' ] = 'Hello %s';
+	 *  
+	 *  // update translation
+	 *  App::updateTransalation( $lang );
+	 * </code>
+	 * @param array $lang
+	 */
+	public static function updateTransalation( array &$lang ){
+		global $__aqua_translations__;
+		$__aqua_translations__ = array_merge( $__aqua_translations__, $lang );
+	}
+	
 	////////// viewports  //////////
 	private static $viewPorts = array();
 	private static $viewPortDelegates = array();

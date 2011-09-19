@@ -1,6 +1,7 @@
 <?php
+use aqua\App;
+$lang = array();
+$lang['title'] = 'এটা একটি ডেমো app!';
 
-global $__aqua_translations__;
-$__aqua_translations__['title'] = 'এটা একটি ডেমো app!';
-
+App::updateTransalation( $lang );
 ?>
