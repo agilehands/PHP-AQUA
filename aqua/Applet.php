@@ -161,8 +161,8 @@ namespace aqua;
 		}
 		
 		public static function asset( $applet, $file, $ext, $url = true){
-				
-			$path = App::$instance->getLocalizedPath( 'applets/'.$applet.'/assets', $file ,$ext );			
+			$path = App::$instance->getLocalizedPath( 'applets/'.$applet.'/assets', $file ,$ext );
+						
 			if( !$path ){
 				// check in global folder		
 				$prefix = GLOBAL_DIR.'/applets/'.$applet.'/assets';				

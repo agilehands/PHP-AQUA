@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+
+img.selected_locale{
+	opacity:1;
+}
+
+
+img.other_locale{
+	opacity:0.4;
+}
+img.other_locale:hover{
+	opacity:1;
+}

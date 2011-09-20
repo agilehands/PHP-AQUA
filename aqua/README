@@ -4,5 +4,3 @@ Release 0.3.2
 
 However, this applet cannnot be used from Global directory since it uses assets like css and images.
 Copy this applet into your application zone. 
-
-2. Changed App::getCurrentLocale() to App::currentLocale();
