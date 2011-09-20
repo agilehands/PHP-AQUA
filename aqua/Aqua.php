@@ -132,7 +132,6 @@ function AquaErrorHandler($errno, $errstr, $errfile, $errline)
 $__aqua_translations__ = array();
 function _t($key,$args = array()){
 	global $__aqua_translations__;
-	
 	if(!isset($__aqua_translations__[$key])){
 		return $key;
 	}else{

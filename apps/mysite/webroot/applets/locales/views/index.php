@@ -16,11 +16,11 @@ $currentLocale = App::getCurrentLocale();
 foreach ( $locales as $lang){
 	if( $currentLocale == $lang ){
 		?>
-	<a style="text-decoration:none;font-size:14px" href="<?php echo App::url('',$lang)?>"> <?php  Applet::img('locales', $lang.'.png' ,$lang,'selected_locale')?>  </a>
+	<a style="text-decoration:none;font-size:14px" href="<?php echo App::url('',$lang)?>" title="<?php echo _t($lang) ?>" > <?php  Applet::img('locales', $lang.'.png' ,_t($lang),'selected_locale')?>  </a>
 	<?php
 	}else{
 		?>
-	<a style="text-decoration:none;font-size:14px" href="<?php echo App::url('',$lang)?>"> <?php  Applet::img('locales', $lang.'.png',$lang, 'other_locale' )?>  </a>
+	<a style="text-decoration:none;font-size:14px" href="<?php echo App::url('',$lang)?>" title="<?php echo _t($lang) ?>" > <?php  Applet::img('locales', $lang.'.png', _t($lang), 'other_locale' )?>  </a>
 	<?php
 	}
 }

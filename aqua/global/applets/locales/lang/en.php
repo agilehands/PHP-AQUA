@@ -12,7 +12,7 @@
 use aqua\App;
 
 $lang = array();
-$lang['en'] = 'en';
-$lang['bn'] = 'bn';
+$lang['en'] = 'English';
+$lang['bd'] = 'Bangla';
 App::updateTransalation( $lang );
 ?>
