@@ -28,7 +28,7 @@ namespace aqua;
 
 class DefaultHTTPErrorHandler implements IHTTPErrorHandler{
 	public function __construct(){		
-		$curLocale = App::currentLocale();
+		$curLocale = App::getCurrentLocale();
 		include AQUA_DIR.'/httperror/lang/http_messages.php';
 		
 		if( $curLocale != 'en' && file_exists( AQUA_DIR.'/lang/http_messages_'.$curLocale.'.php' ) ){

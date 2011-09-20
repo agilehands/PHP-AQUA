@@ -105,7 +105,7 @@ namespace aqua;
 			$appletDir = App::$instance->getAppletDir( $applet, true ); 		
 			
 			@include( $appletDir . '/lang/'.App::getDefaultLocale() . '.php');
-			@include( $appletDir . '/lang/'.App::currentLocale() . '.php');		
+			@include( $appletDir . '/lang/'.App::getCurrentLocale() . '.php');		
 		
 			include( $path );
 		}

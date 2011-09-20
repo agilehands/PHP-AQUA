@@ -31,7 +31,7 @@ use aqua\App;
 			</div>
 		</div>
 		<div style="clear: both">
-			layout = <?php echo App::GetCurrentLocale() ?>/default.php
+			layout = <?php echo App::getCurrentLocale() ?>/default.php
 			উপরে সাইট টাইটেলে ট্রান্সলেশন ব্যাবহার করাহলেও এই বাক্যটি সরাসরি localized লে-আউটে লেখা হয়েছে।  
 		</div>
 		<div class='container'>

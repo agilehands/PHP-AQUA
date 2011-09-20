@@ -675,7 +675,7 @@ class App{
 	
 	
 	////////// UTILITY /////////////////
-	public static function currentLocale(){		
+	public static function getCurrentLocale(){		
 		return self::$instance->currentLocale;
 	}
 	public static function getDefaultLocale(){

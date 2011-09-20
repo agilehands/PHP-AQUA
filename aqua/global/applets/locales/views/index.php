@@ -12,7 +12,7 @@ use aqua\Applet;
 Applet::css('locales', 'style.css');
 
 $locales = App::getLocales();
-$currentLocale = App::currentLocale();
+$currentLocale = App::getCurrentLocale();
 foreach ( $locales as $lang){
 	if( $currentLocale == $lang ){
 		?>
